@@ -30,6 +30,8 @@ def hello_world():
             if success:
                 return make_response(jsonify({"results": data}), 200)
             return make_response(jsonify({"results": data}), 500)
+        else:
+           return make_response(jsonify({"results": cambio_base.base_n_10()[0]}), 500) 
     return make_response(jsonify({"results": 'Falló la comunicación con el servidor'}), 500)
 
 if __name__ == '__main__':
